@@ -13,7 +13,7 @@ public class Point_Score : MonoBehaviour
 	public Text blackBrownText;
 	private int score;
 
-	// Initializing variables on here
+	// Initializing variables here
 	void Start () 
 	{
 		scoreText.text = "";
@@ -29,7 +29,7 @@ public class Point_Score : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Black") // if we put the black Goti in the goal
 		{
-			blackBrownText.text = "Good job you got 10 points!";
+			blackBrownText.text = "Good job you got 10 points because you got the black goti in the goal!";
 			other.gameObject.SetActive(false);
 			score = score + 10;
 		}
@@ -43,11 +43,11 @@ public class Point_Score : MonoBehaviour
 	}
 
 	// what do we do if we get the queen inside the goal
-	void OnColliderEnter_Queen (Collider other) // if we put the Goti in the goal
+	void OnColliderEnter_Queen (Collider other) // if we put the Queen (red) Goti in the goal
 	{
 		if (other.gameObject.tag == "Queen")
 		{
-			queenText.text = "Good Job, you got the Queen in, now score one more Goti in the first try to retrieve the queen";
+			queenText.text = "Queen in. Now score one more Goti in the first try to retrieve the queen";
 			if (other.gameObject.tag == "Black" || other.gameObject.tag == "Brown") // if a black goti or a brown goti enters the goal, then we increase the player score by 10 if its black
 																					// and 20 if its brown
 			{
@@ -66,11 +66,12 @@ public class Point_Score : MonoBehaviour
 			}
 		}
 	}
-
+	
 	void SetScoreText ()
 	{	
-		scoreText.text = "Player Score: " + score.ToString();
+		// set text for the case where the nth player scores
+		scoreText.text = "Player 2 Score: " + score.ToString ();
+		scoreText.text = "Player 1 Score: " + score.ToString();
 		winText.text = "Good Job! You win the game";
-
 	}
 }
