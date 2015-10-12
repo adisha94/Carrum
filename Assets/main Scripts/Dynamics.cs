@@ -72,8 +72,6 @@ public class Dynamics : MonoBehaviour
 		};
 	}
 
-	void display()
-	{
 
 	}
 
