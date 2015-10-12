@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class ActivateTrigger : MonoBehaviour {
+public class ActivateTrigger : MonoBehaviour
+{
 	public enum Mode
 	{
 		Trigger   = 0, // Just broadcast the action on to the target
@@ -10,7 +11,7 @@ public class ActivateTrigger : MonoBehaviour {
 		Animate   = 4, // Start animation on target
 		Deactivate = 5 // Decativate target GameObject
 	}
-
+	
 	/// The action to accomplish
 	public Mode action = Mode.Activate;
 
@@ -20,7 +21,7 @@ public class ActivateTrigger : MonoBehaviour {
 	public int triggerCount = 1;///
 	public bool repeatTrigger = false;
 	
-	void DoActivateTrigger ()
+	public void DoActivateTrigger ()
 	{
 		triggerCount--;
 
