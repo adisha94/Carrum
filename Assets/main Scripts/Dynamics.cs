@@ -37,24 +37,39 @@ public class Dynamics : MonoBehaviour
 
 
 	// restricted player movement
+	// initial turn algorithm
 	void FixedUpdate()
 	{
-		bool hit = Input.GetButton ("Fire1");
+		Algorithm1 ();
+
+	}
+
+
+	/**
+	 * This method describes one version of the turning algorithm
+	 * 
+	 */
+	void Algorithm1()
+	{
+		bool hit = Input.GetButton("Fire1");
 		// sequence of turn
 		// move to adjust x
 		float gettingXMovement = x;
 		// hit button to set angualar position
 		if ( hit == true)
 		{
+			/// move to adjust
 			float gettingZMovement = z;
+			if ( hit == true )
+			{
+				// display power meter
+				ActivateTrigger trig = new ActivateTrigger(); // activate the power meter				 
+				if (hit == true)
+				{
+					// move striker
+				}
+			}		
 		};
-		if ( hit == true)
-		{
-			// display power meter and 
-			ActivateTrigger trig = new ActivateTrigger(); // activate the power meter
-//			trig.action
-		}
-
 	}
 
 	void display()
