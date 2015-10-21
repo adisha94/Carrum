@@ -8,15 +8,22 @@ public class Dynamics : MonoBehaviour
 	public float initialX;
 	public float initialZ;
 	private float initialY = 0;
-	private float x = Input.GetAxis("Horizontal");
+	private float x = 0;//Input.GetAxis("Horizontal");
 	private float y = 0;
-	private float z = Input.GetAxis("Vertical");
+	private float z = 0;//Input.GetAxis("Vertical");
 	public Vector3 initialPosition;
 	public ActivateTrigger activate;
 
 	GameObject player;
 
 	// Use this for initialization
+
+
+	int main()
+	{
+		return 1;
+	}
+
 
 	void Start ()
 	{
@@ -58,22 +65,40 @@ public class Dynamics : MonoBehaviour
 		// hit button to set angualar position
 		if ( hit == true)
 		{
+			hit = Input.GetButton("Fire1");
 			/// move to adjust
 			float gettingZMovement = z;
 			if ( hit == true )
 			{
+				hit = Input.GetButton("Fire1");
 				// display power meter
-				ActivateTrigger trig = new ActivateTrigger(); // activate the power meter				 
 				if (hit == true)
 				{
-					// move striker
+					hit = Input.GetButton("Fire1");
+					ActivateTrigger trigger = new ActivateTrigger(); // activate the power meter				 
+					trigger.DoActivateTrigger();
+					if (hit == true)
+					{
+						// move striker
+					}
+
 				}
 			}		
-		};
+		}
 	}
 
 
+	void Algorithm2()
+	{
+		/**
+		 * 1. bool a checker for user input
+		 * 2. declare a float to move across the board
+		 * 
+		 * 
+		 * 
+		 */
 	}
+
 
 	void LateUpdate()
 	{
