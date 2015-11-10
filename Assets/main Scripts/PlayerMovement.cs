@@ -38,11 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
 	}
 
-
-//	void ControllerInput()
-//	{
-//	}
-//
+	
 	/**
 	 * camera movement updates
 	 **/
