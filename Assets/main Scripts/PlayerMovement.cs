@@ -8,8 +8,7 @@ public class PlayerMovement : MonoBehaviour
 	/**
 	 * Player has to move within a certain area. 
 	 * That area is where the player is restricted to move. 
-	 * Player Cannot Move beyong that restricted area.
-	 * 
+	 * Player Cannot Move beyong that restricted area
 	 * This script documents and writes the program for the movement of the player using keyboard and mouse.
 	 **/
 
@@ -25,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
 	void FixedUpdate ()
 	{
 		KeyBoardInput ();
-//		ControllerInput ();
 	}
 
 	// this function is for moving the striker with the keyboard
