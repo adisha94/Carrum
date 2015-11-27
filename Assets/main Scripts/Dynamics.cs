@@ -60,13 +60,15 @@ public class Dynamics : MonoBehaviour
 	{
 		bool hit = Input.GetButton("Fire1");
 		// sequence of turn
-		// move to adjust x
+		// move to adjust x axis pointer
+		x = Input.GetAxis("Horizontal");
 		float gettingXMovement = x;
 		// hit button to set angualar position
 		if ( hit == true)
 		{
 			hit = Input.GetButton("Fire1");
 			/// move to adjust
+			z = Input.GetAxis("Vertical");
 			float gettingZMovement = z;
 			if ( hit == true )
 			{
@@ -99,9 +101,11 @@ public class Dynamics : MonoBehaviour
 		 */
 	}
 
-
+	/**
+	 * Camera update functions go here.
+	 **/
 	void LateUpdate()
 	{
-		Camera_Player_Focus cam = new Camera_Player_Focus();
+//		Camera_Player_Focus cam = new Camera_Player_Focus();
 	}
 }
