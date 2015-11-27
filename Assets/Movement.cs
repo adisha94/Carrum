@@ -27,7 +27,7 @@ public class Movement : MonoBehaviour
 	 **/
 	void FixedUpdate()
 	{
-		MovementMethod ();
+		MovementMethod();
 	}
 	
 	/**
