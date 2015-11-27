@@ -15,7 +15,11 @@ public class Movement : MonoBehaviour
 
 	void Update()
 	{
-//		MovementMethod();
+		Vector3 fwd = transform.TransformDirection (Vector3.forward);
+		if (Physics.Raycast (transform.position, fwd, 10))
+		{
+			print("There is something in front of the selected object");
+		}
 	}
 
 	/**
@@ -23,7 +27,7 @@ public class Movement : MonoBehaviour
 	 **/
 	void FixedUpdate()
 	{
-		MovementMethod();
+		MovementMethod ();
 	}
 	
 	/**
@@ -37,17 +41,16 @@ public class Movement : MonoBehaviour
 		float yPos = (v * range) * Time.deltaTime;
 		Vector3 move = new Vector3 (xPos, 0, yPos);
 //		transform.position = new Vector3 (xPos, 0, yPos); // updates the position of the current object
-		rb.AddForce (move, ForceMode.Force);
+		rb.AddForce (new Vector3(xPos, 0, yPos), ForceMode.Acceleration);
 	}
 
 	/**
 	 * Main rotation method
 	 *
-//	void RotationMethod()
-//	{
-//		float h = Input.GetAxis ("Horizontal");
-//		float v = Input.GetAxisRaw ("Vertical");
-//		GetComponent<Rigidbody>().AddTorque (transform.up * range);
-//		GetComponent<Rigidbody>().AddTorque (transform.right * range);
-//	}
+	 */
+	void RotationMethod()
+	{
+		GetComponent<Rigidbody>().AddTorque (transform.up * range);
+		GetComponent<Rigidbody>().AddTorque (transform.right * range);
+	}
 }
