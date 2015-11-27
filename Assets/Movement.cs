@@ -5,18 +5,30 @@ public class Movement : MonoBehaviour
 {
 
 	public float range;
-	// Update is called once per frame
 	private Rigidbody rb;
 	void Start()
 	{
 		rb = GetComponent<Rigidbody> ();
 	}
+
+
+
 	void Update()
+	{
+//		MovementMethod();
+	}
+
+	/**
+	 * updates the physics based functions
+	 **/
+	void FixedUpdate()
 	{
 		MovementMethod();
 	}
-
-
+	
+	/**
+	 * Main movement method
+	 **/
 	void MovementMethod()
 	{
 		float h = Input.GetAxis ("Horizontal");
@@ -28,19 +40,14 @@ public class Movement : MonoBehaviour
 		rb.AddForce (move, ForceMode.Force);
 	}
 
-
-	void RotationMethod()
-	{
-		float h = Input.GetAxis ("Horizontal");
-		float v = Input.GetAxisRaw ("Vertical");
-		GetComponent<Rigidbody>().AddTorque (transform.up * range);
-		GetComponent<Rigidbody>().AddTorque (transform.right * range);
-	}
 	/**
-	 * updates the physics based functions
-	 **/
-	void FixedUpdate()
-	{
-	}
-
+	 * Main rotation method
+	 *
+//	void RotationMethod()
+//	{
+//		float h = Input.GetAxis ("Horizontal");
+//		float v = Input.GetAxisRaw ("Vertical");
+//		GetComponent<Rigidbody>().AddTorque (transform.up * range);
+//		GetComponent<Rigidbody>().AddTorque (transform.right * range);
+//	}
 }
