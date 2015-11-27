@@ -72,6 +72,6 @@ public class Point_Score : MonoBehaviour
 		// set text for the case where the nth player scores
 		scoreText.text = "Player 2 Score: " + score.ToString ();
 		scoreText.text = "Player 1 Score: " + score.ToString();
-		winText.text = "Good Job! You win the game";
+		winText.text = "Good Job! You win the game"; // display ONLY IF someone wins the game
 	}
 }
