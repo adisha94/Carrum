@@ -17,14 +17,6 @@ public class Dynamics : MonoBehaviour
 	GameObject player;
 
 	// Use this for initialization
-
-
-	int main()
-	{
-		return 1;
-	}
-
-
 	void Start ()
 	{
 //		initialPosition = new Vector3(initialX, initialY, initialZ); // initial position of player. We set y to 0 so object sticks to the ground
@@ -48,7 +40,6 @@ public class Dynamics : MonoBehaviour
 	void FixedUpdate()
 	{
 		Algorithm1 ();
-
 	}
 
 
@@ -66,6 +57,7 @@ public class Dynamics : MonoBehaviour
 		// hit button to set angualar position
 		if ( hit == true)
 		{
+			print("You have hit the button");
 			hit = Input.GetButton("Fire1");
 			/// move to adjust
 			z = Input.GetAxis("Vertical");
@@ -77,7 +69,9 @@ public class Dynamics : MonoBehaviour
 				if (hit == true)
 				{
 					hit = Input.GetButton("Fire1");
-					activate.DoActivateTrigger(); // moves the object
+//					activate.DoActivateTrigger(); // moves the object
+					ActivateTrigger trigger = new ActivateTrigger();
+					trigger.DoActivateTrigger();
 					if (hit == true)
 					{
 						// move striker
@@ -95,7 +89,7 @@ public class Dynamics : MonoBehaviour
 		 * 1. bool a checker for user input
 		 * 2. declare a float to move across the board
 		 * 
-		 * 
+		 * Further developement is needed for this developemnt
 		 * 
 		 */
 	}
