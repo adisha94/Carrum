@@ -9,9 +9,9 @@ public class Dynamics : MonoBehaviour
 	public float initialZ;
 	private float initialY = 0;
 	private float x = 0;//Input.GetAxis("Horizontal");
-	private float y = 0;
+//	private float y = 0;
 	private float z = 0;//Input.GetAxis("Vertical");
-	public Vector3 initialPosition;
+//	public Vector3 initialPosition;
 	public ActivateTrigger activate;
 
 	GameObject player;
@@ -27,7 +27,7 @@ public class Dynamics : MonoBehaviour
 
 	void Start ()
 	{
-		initialPosition = new Vector3(initialX, initialY, initialZ); // initial position of player. We set y to 0 so object sticks to the ground
+//		initialPosition = new Vector3(initialX, initialY, initialZ); // initial position of player. We set y to 0 so object sticks to the ground
 
 	}
 
@@ -77,8 +77,7 @@ public class Dynamics : MonoBehaviour
 				if (hit == true)
 				{
 					hit = Input.GetButton("Fire1");
-					ActivateTrigger trigger = new ActivateTrigger(); // activate the power meter				 
-					trigger.DoActivateTrigger();
+					activate.DoActivateTrigger(); // moves the object
 					if (hit == true)
 					{
 						// move striker
