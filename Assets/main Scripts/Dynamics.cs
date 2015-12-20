@@ -49,36 +49,36 @@ public class Dynamics : MonoBehaviour
 	 */
 	void Algorithm1()
 	{
-		bool hit = Input.GetButton("Fire1");
 		// sequence of turn
 		// move to adjust x axis pointer
 		x = Input.GetAxis("Horizontal");
 		float gettingXMovement = x;
 		// hit button to set angualar position
+		bool hit = Input.GetButton("Fire1");
 		if ( hit == true)
 		{
 			print("You have hit the button");
-			hit = Input.GetButton("Fire1");
-			/// move to adjust
-			z = Input.GetAxis("Vertical");
-			float gettingZMovement = z;
-			if ( hit == true )
-			{
-				hit = Input.GetButton("Fire1");
-				// display power meter
-				if (hit == true)
-				{
-					hit = Input.GetButton("Fire1");
-//					activate.DoActivateTrigger(); // moves the object
-					ActivateTrigger trigger = new ActivateTrigger();
-					trigger.DoActivateTrigger();
-					if (hit == true)
-					{
-						// move striker
-					}
-
-				}
-			}		
+//			hit = Input.GetButton("Fire1");
+//			/// move to adjust
+//			z = Input.GetAxis("Vertical");
+//			float gettingZMovement = z;
+//			if ( hit == true )
+//			{
+//				hit = Input.GetButton("Fire1");
+//				// display power meter
+//				if (hit == true)
+//				{
+//					hit = Input.GetButton("Fire1");
+////					activate.DoActivateTrigger(); // moves the object
+////					ActivateTrigger trigger = new ActivateTrigger();
+////					trigger.DoActivateTrigger();
+//					if (hit == true)
+//					{
+//						// move striker
+//					}
+//
+//				}
+//			}		
 		}
 	}
 
