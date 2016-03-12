@@ -5,6 +5,7 @@ public class GM : MonoBehaviour
 {
 	public int lives;
 	public bool Player_turn;
+	Point_Score point_manager;
 
 	// Use this for initialization
 	void Start () 
