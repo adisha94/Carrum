@@ -4,7 +4,7 @@ using System.Collections;
 public class GM : MonoBehaviour 
 {
 	public int lives;
-	public Player_turn;
+	public bool Player_turn;
 
 	// Use this for initialization
 	void Start () 
