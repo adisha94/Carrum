@@ -6,7 +6,7 @@ public class Point_Score : MonoBehaviour
 {
 
 	// declaring variables
-
+	public bool player_turn;
 	public Text scoreText;
 	public Text winText;
 	public Text queenText;
@@ -16,6 +16,7 @@ public class Point_Score : MonoBehaviour
 	// Initializing variables here
 	void Start () 
 	{
+		player_turn = false;
 		scoreText.text = "";
 		winText.text = "";
 		SetScoreText ();
@@ -53,23 +54,37 @@ public class Point_Score : MonoBehaviour
 			{
 				OnCollidorEnter_Black_or_Brown(other);
 				other.gameObject.SetActive(false);
-				if (other.gameObject.tag == "Black")
-				{
-					score = score + 10;
-				}
-				if (other.gameObject.tag ==  "Brown")
-				{
-					other.gameObject.SetActive(false);
-					score = score + 20;
-				}
+//				if (other.gameObject.tag == "Black")
+//				{
+//					score = score + 10;
+//				} 
+//				if (other.gameObject.tag ==  "Brown")
+//				{
+//					other.gameObject.SetActive(false);
+//					score = score + 20;
+//				}
 
 			}
 		}
 	}
-	
+
+
+	void OnCollisionEnter (Collision other)
+	{
+		OnCollidorEnter_Black_or_Brown ();
+		OnColliderEnter_Queen();
+	}
+
+//	void OnCollisionExit(Collision other)
+//	{
+//		
+//	}
+
+
 	void SetScoreText ()
 	{	
 		// set text for the case where the nth player scores
+		scoreText.text = "Player 3 Score: " + score.ToString();
 		scoreText.text = "Player 2 Score: " + score.ToString ();
 		scoreText.text = "Player 1 Score: " + score.ToString();
 
